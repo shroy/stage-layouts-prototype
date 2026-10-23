@@ -1,6 +1,6 @@
 # Animated Stage Layouts
 
-A React prototype exploring how video-call participants can smoothly rearrange as people join, leave, or get pinned. Originally developed while exploring animated stage layouts for Wistia Live.
+A React prototype exploring how video-call participants can smoothly rearrange as people join, leave, or get pinned. Originally developed while exploring animated stage layouts for Wistia Live. I built the original layout prototype without AI.
 
 Three participants start on stage. Add more from the bottom strip, then pin or remove participants to see how the layout adapts.
 
