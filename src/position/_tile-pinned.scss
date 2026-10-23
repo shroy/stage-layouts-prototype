@@ -1,0 +1,163 @@
+.Presentables[data-pinned="true"] {
+  --pinned-width: 68%;
+
+  &:has(> :nth-child(2), :nth-child(5):last-child) {
+    --pin-rows: 1;
+
+    li {
+      top: calc(100% / var(--rows, 1) * var(--row-start, 0));
+      left: calc(100% / var(--columns, 0) * var(--column-start, 0));
+      height: calc(100% / var(--rows, 1) * var(--span-rows, 1));
+      width: calc(
+        100% / var(--columns, var(--pinned-width, 1)) * var(--span-columns)
+      );
+    }
+
+    li[data-pinned="true"] {
+      --span-rows: var(--rows);
+
+      width: var(--pinned-width);
+    }
+
+    li[data-unpinned] {
+      left: var(--pinned-width);
+      width: calc(100% - var(--pinned-width, 75%));
+      height: calc(100% / var(--rows, 1));
+    }
+    li[data-unpinned="1"] {
+      --row-start: 0;
+    }
+    li[data-unpinned="2"] {
+      --row-start: 1;
+    }
+    li[data-unpinned="3"] {
+      --row-start: 2;
+    }
+    li[data-unpinned="4"] {
+      --row-start: 3;
+    }
+    li[data-unpinned="5"] {
+      --row-start: 4;
+    }
+  }
+
+  &:has(> :nth-child(3):last-child) {
+    --rows: 2;
+  }
+
+  &:has(> :nth-child(4):last-child) {
+    --rows: 3;
+  }
+
+  &:has(> :nth-child(5):last-child) {
+    --rows: 4;
+    --pinned-width: 75%;
+  }
+
+  &:has(> :nth-child(6):last-child) {
+    --rows: 5;
+    --pinned-width: 80%;
+  }
+
+  /*
+   * This hasn't been updated to use the grid variables above
+  */
+
+  // Wrap around the pinned item
+  &:has(> :nth-child(7):last-child) {
+    --pinned-width: 75%;
+    --rows: 3;
+    --row-height: calc(100% / var(--rows));
+    --col-width: 25%;
+
+    li[data-pinned="true"] {
+      height: calc(100% - var(--row-height));
+    }
+
+    li[data-unpinned="2"] {
+      top: calc(100% / var(--rows));
+      left: var(--pinned-width);
+    }
+
+    li[data-unpinned="3"] {
+      top: calc(100% / var(--rows) * 2);
+      left: var(--pinned-width);
+    }
+
+    li[data-unpinned="4"] {
+      top: calc(100% / var(--rows) * 2);
+      left: calc(100% - calc(var(--col-width) * 2));
+    }
+
+    li[data-unpinned="5"] {
+      top: calc(100% / var(--rows) * 2);
+      left: calc(100% - calc(var(--col-width) * 3));
+    }
+
+    li[data-unpinned="6"] {
+      top: calc(100% / var(--rows) * 2);
+      left: 0;
+    }
+  }
+
+  &:has(> :nth-child(8):last-child) {
+    --rows: 4;
+    --middle-row-height: calc(100% / 3);
+    --pinned-width: 60%;
+    --remaining-width: calc(100% - var(--pinned-width));
+    --second-col-width: calc(var(--remaining-width) / 7 * 4);
+    --third-col-start: calc(var(--pinned-width) + var(--second-col-width));
+    --third-column-width: calc(var(--remaining-width) / 7 * 3);
+
+    li[data-pinned="true"] {
+      height: 100%;
+      width: var(--pinned-width);
+    }
+
+    li[data-pinned="false"] {
+      top: 0;
+      width: var(--second-col-width);
+      left: var(--pinned-width);
+      height: var(--middle-row-height);
+    }
+
+    li[data-unpinned="2"] {
+      top: var(--middle-row-height);
+      height: var(--middle-row-height);
+    }
+
+    li[data-unpinned="3"] {
+      top: calc(var(--middle-row-height) * 2);
+      left: var(--pinned-width);
+      height: var(--middle-row-height);
+    }
+
+    li[data-unpinned="4"] {
+      left: calc(var(--third-col-start));
+      top: 0;
+      width: var(--third-column-width);
+      height: calc(100% / var(--rows));
+    }
+
+    li[data-unpinned="5"] {
+      left: calc(var(--third-col-start));
+      top: calc(100% / var(--rows));
+      width: var(--third-column-width);
+      height: calc(100% / var(--rows));
+    }
+
+    li[data-unpinned="6"] {
+      left: calc(var(--third-col-start));
+      top: calc(100% / var(--rows) * 2);
+      width: var(--third-column-width);
+      height: calc(100% / var(--rows));
+    }
+
+    li[data-unpinned="7"] {
+      left: calc(var(--third-col-start));
+      top: calc(100% / var(--rows) * 3);
+      width: var(--third-column-width);
+      height: calc(100% / var(--rows));
+    }
+  }
+}
