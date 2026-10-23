@@ -14,6 +14,8 @@ I ultimately went with [absolute positioning](src/layouts-position.scss), which 
 
 It's a tradeoff: more responsibility for positioning logic in exchange for greater control over how the layout animates.
 
+The positioning approach became the basis for Wistia Live's stage layouts and later supported additional configurations beyond those shown here.
+
 ## Run locally
 
 Requires Node.js 20.19+ or 22.12+.
