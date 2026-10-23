@@ -1,3 +1,5 @@
+@use "sass:meta";
+
 .Stage {
   display: grid;
   grid-template: 1fr / 1fr;
@@ -28,8 +30,8 @@
   }
 }
 
-@import "./position/_tile";
-@import "./position/_tile-pinned";
+@include meta.load-css("./position/tile");
+@include meta.load-css("./position/tile-pinned");
 
 @keyframes show {
   0% {

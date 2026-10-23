@@ -17,7 +17,7 @@ export const participants: Participant[] = [
     img: "https://www.dailyactor.com/wp-content/uploads/2013/05/Michael-Cera-arrested-development.jpg",
   },
   {
-    name: "Meaby",
+    name: "Maeby",
     img: "https://images.entertainment.ie/storage/images_content/rectangle/620x372/maeby.jpg?w=640&h=384&q=high",
   },
   {
